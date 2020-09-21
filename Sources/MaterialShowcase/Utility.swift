@@ -47,6 +47,19 @@ extension UIView {
     self.layer.cornerRadius = self.frame.width / 2;
     self.layer.masksToBounds = true
   }
+    
+    func roundBorder() {
+        self.layer.cornerRadius = 30
+        self.layer.masksToBounds = true
+    }
+    
+    func asBezelRect() {
+        self.layer.cornerRadius = 30
+        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        self.layer.shadowRadius = 11
+        self.layer.shadowOpacity = 1
+    }
   
   func setTintColor(_ color: UIColor, recursive: Bool) {
     tintColor = color
@@ -119,3 +132,4 @@ extension CGRect {
 public enum MaterialKey : String{
     case _default
 }
+
